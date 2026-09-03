@@ -4,9 +4,9 @@
   "description": "Node.js CLI like `bat` — cat with syntax highlighting, line numbers + mkdir -p + project scaffolding. Cross-platform, fast, zero-config.",
   "type": "module",
   "bin": {
-    "bat": "./bin/cli.js",
-    "bat-mkdir": "./bin/cli.js",
-    "bmk": "./bin/cli.js"
+    "bmk": "bin/cli.js",
+    "bat-mkdir": "bin/cli.js",
+    "bat": "bin/cli.js"
   },
   "main": "./src/index.js",
   "exports": {
