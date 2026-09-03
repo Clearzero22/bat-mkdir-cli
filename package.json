@@ -1,6 +1,6 @@
 {
   "name": "bat-mkdir-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node.js CLI like `bat` — cat with syntax highlighting, line numbers + mkdir -p + project scaffolding. Cross-platform, fast, zero-config.",
   "type": "module",
   "bin": {
