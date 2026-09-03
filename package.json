@@ -1,0 +1,67 @@
+{
+  "name": "bat-mkdir-cli",
+  "version": "0.1.0",
+  "description": "Node.js CLI like `bat` — cat with syntax highlighting, line numbers + mkdir -p + project scaffolding. Cross-platform, fast, zero-config.",
+  "type": "module",
+  "bin": {
+    "bat": "./bin/cli.js",
+    "bat-mkdir": "./bin/cli.js",
+    "bmk": "./bin/cli.js"
+  },
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "templates/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "vitest run --reporter=verbose",
+    "test:watch": "vitest",
+    "bench": "node bench/bench.js",
+    "bench:compare": "node bench/bench.js --compare",
+    "lint": "node --check bin/cli.js && echo \"lint ok\"",
+    "pack:test": "npm pack --dry-run",
+    "prepublishOnly": "npm test && npm run bench"
+  },
+  "keywords": [
+    "bat",
+    "cat",
+    "mkdir",
+    "cli",
+    "scaffold",
+    "project",
+    "highlight",
+    "commander",
+    "chalk",
+    "cross-platform"
+  ],
+  "license": "MIT",
+  "author": "Clearzero22 <2541330269@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Clearzero22/bat-mkdir-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Clearzero22/bat-mkdir-cli/issues"
+  },
+  "homepage": "https://github.com/Clearzero22/bat-mkdir-cli#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

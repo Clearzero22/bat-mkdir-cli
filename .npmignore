@@ -1,0 +1,6 @@
+test/
+bench/
+docs/
+*.log
+.tmp/
+coverage/
