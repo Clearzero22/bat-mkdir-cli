@@ -105,19 +105,23 @@ bat init my-app --name awesome-app -v
 
 ### 性能
 
-`npm run bench` 在 `bench/bench.js` 中：
+`npm run bench` 在 `bench/bench.js` 中（详见 [docs/BENCHMARK.md](docs/BENCHMARK.md)）：
 
 - 1000 次 `mkdir -p` 嵌套目录
-- 100 次 1MB 文件高亮
-- 1000 次 `expandPath` + `getLanguage`
+- 20 次 1MB/75k行 文件高亮
+- 100k 次 `expandPath` + `getLanguage`
 
-示例（Windows i7, Node 24）：
+实测（Windows 11, Node 24, i7, 2026-09-03）：
 
 ```
-mkdir 1000x : 320 ms (0.32 ms/op)
-cat highlight 100x 1MB : 980 ms (9.8 ms/op)
-utils 1000x : 12 ms
+mkdir 1000x : 889 ms (0.89 ms/op)
+cat highlight 20x 1MB: 8621 ms (431 ms/op, 2.5 MB/s)
+cat plain     20x 1MB: 262 ms (13 ms/op)
+utils 100k : 699 ms (6.9 µs/op)
 ```
+门禁：`mkdir <2ms/op` 且 `cat highlight <500ms/op` ✔
+
+> 9.7kB pack, 26.4kB unpacked, 18 files, 仅 `chalk`+`commander`
 
 ### API
 
